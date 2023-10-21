@@ -10,7 +10,8 @@ foreach($lorem as $line) {
     }
 
     foreach($lorem as $line) {
-        if (\Nette\Utils\Strings::match($line, '([\000-\037])') !== null) {
+        $escapedValue = addcslashes($line, "\0..\37");
+        if ($escapedValue !== $line) {
 
         }
     }
